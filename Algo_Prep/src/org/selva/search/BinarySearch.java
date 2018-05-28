@@ -23,7 +23,5 @@ public class BinarySearch {
 				endIndex = mid - 1;
 		}
 		return "not found";
-
 	}
-
 }
