@@ -1,31 +1,27 @@
-package com.selvakumar.graph.impl;
+package com.selvakumar.graph;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Graph<T> {
 
-	private final HashMap<T, Set<T>> adjacencyList;
+	private final LinkedHashMap<T, List<T>> adjacencyList;
 
 	public Graph() {
-		this.adjacencyList = new HashMap<>();
+		this.adjacencyList = new LinkedHashMap<T, List<T>>();
 	}
 
 	public void addVertex(T vertex) {
 		if (this.adjacencyList.containsKey(vertex)) {
 			System.err.println("vertex already exists");
 		} else {
-			this.adjacencyList.put(vertex, new HashSet<T>());
+			this.adjacencyList.put(vertex, new LinkedList<T>());
 		}
 	}
 
 	public void removeVertex(T vertex) {
-		if (!this.adjacencyList.containsKey(vertex)) {
-			System.err.println("vertex doesn't exists");
-		} else {
-			this.adjacencyList.remove(vertex);
-		}
+		this.adjacencyList.remove(vertex);
 	}
 
 	public void addEdge(T startVertex, T endVertex) {
@@ -50,7 +46,11 @@ public class Graph<T> {
 		return this.adjacencyList.keySet();
 	}
 
-	public HashMap<T, Set<T>> getAdjacencyList() {
+	public LinkedHashMap<T, List<T>> getAdjacencyList() {
 		return adjacencyList;
 	}
+	
+	
+	
+	
 }

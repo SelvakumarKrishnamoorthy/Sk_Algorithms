@@ -2,7 +2,7 @@ package com.selvakumar.pojo;
 
 public class Person {
 	
-	private int id;
+	private Integer id;
 	private String name;
 	private int age;
 	private String country;
@@ -45,6 +45,21 @@ public class Person {
 		return "Person [id=" + id + ", name=" + name + ", age=" + age + ", country=" + country + ", phone=" + phone
 				+ "]";
 	}
+	
+	
+	
+//	@Override
+//	public int compareTo(Person o) {
+//		int result = this.name.compareTo(o.getName());
+//		if(result == 0){
+//	        result = this.age > o.getAge() ? 1 : this.age < o.getAge() ? -1 : 0;
+//	    }
+//		if(result ==0) {
+//			 result = this.country.compareTo(o.getCountry());
+//		}
+//		return result;
+//	}
+	
 
 	
 }
